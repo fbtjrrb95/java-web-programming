@@ -1,32 +1,36 @@
 package me.screw.javawebprogramming.calculator;
 
+import org.junit.jupiter.api.BeforeAll;
+import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
 import static org.junit.jupiter.api.Assertions.*;
 
-class CalculatorTest {
+public class CalculatorTest {
+    private Calculator cal;
+
+    @BeforeEach
+    public void setup(){
+        cal = new Calculator();
+    }
 
     @Test
-    void add() {
-        Calculator cal = new Calculator();
+    public void add() {
         assertEquals(9,cal.add(6,3));
     }
 
     @Test
-    void subtract() {
-        Calculator cal = new Calculator();
+    public void subtract() {
         assertEquals(3, cal.subtract(6,3));
     }
 
     @Test
-    void multiply() {
-        Calculator cal = new Calculator();
+    public void multiply() {
         assertEquals(18,cal.multiply(6,3));
     }
 
     @Test
-    void divide() {
-        Calculator cal = new Calculator();
+    public void divide() {
         assertEquals(2,cal.divide(6,3));
     }
 }
