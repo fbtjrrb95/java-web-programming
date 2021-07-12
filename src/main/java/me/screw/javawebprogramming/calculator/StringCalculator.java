@@ -28,20 +28,22 @@ public class StringCalculator {
         }
 
         // 구분자 ',' or ':' 입력할 경우 두 숫자의 합을 반환한다.
-        String[] numbers = text.split(",|:");
-        int result =0;
-        int _number =-1;
-        for(String n : numbers){
-            _number = getNumber(n);
-            System.out.println(_number);
-            if(_number <= -1) {
+        String[] tokens = text.split(",|:");
+        int result = 0;
+        int number = -1;
+        int validTokenCnt=0;
+
+        for(String token : tokens){
+            number = getNumber(token);
+            if(number <= -1) {
                 break;
             }
-            result +=  _number;
-            return result;
+            validTokenCnt += 1;
+            result += number;
         }
 
-        return -1;
+
+        return validTokenCnt == tokens.length ? result : -1;
 
     };
 
