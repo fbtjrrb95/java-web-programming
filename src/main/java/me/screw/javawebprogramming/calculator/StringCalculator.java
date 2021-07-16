@@ -25,7 +25,7 @@ public class StringCalculator {
                     try {
                         int num = Integer.parseInt(elem);
                         if (num < 0) {
-                            throw new RuntimeException();
+                            throw new RuntimeException("input positive number");
                         }
                         return num;
 

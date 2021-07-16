@@ -45,5 +45,17 @@ public class StringCalculatorTest {
         assertEquals(6,stringCalculator.add("//-\n1-2-3"));
     }
 
+    @Test
+    public void add_contains_only_colon_exception(){
+        Exception exception = assertThrows(RuntimeException.class, () -> {
+            stringCalculator.add("1,-1");
+        });
+
+        String expectedMessage = "input positive number";
+        String actualMessage = exception.getMessage();
+
+        assertTrue(actualMessage.contains(expectedMessage));
+    }
+
 
 }
