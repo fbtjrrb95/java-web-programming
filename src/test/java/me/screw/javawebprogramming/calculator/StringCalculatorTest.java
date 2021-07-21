@@ -43,6 +43,7 @@ public class StringCalculatorTest {
     public void add_custom_delimeter(){
         assertEquals(6,stringCalculator.add("//]\n1]2]3"));
         assertEquals(6,stringCalculator.add("//-\n1-2-3"));
+        assertEquals(6,stringCalculator.add("//[\n1[2[3"));
     }
 
     @Test
